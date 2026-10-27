@@ -1,0 +1,18 @@
+# Editors
+.idea/
+.vscode/
+
+# Go build outputs
+/clubhousefc
+/clubhousefc.exe
+*.test
+
+# React/Vite dependencies and build output
+/frontend/node_modules/
+/frontend/dist/
+
+# Local environment and logs
+.env
+.env.*
+!.env.example
+*.log
