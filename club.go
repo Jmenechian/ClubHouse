@@ -27,6 +27,26 @@ func createTeam(name string) *Club {
 	return club
 }
 
+func (c *Club) getPlayerByName(name string) (Player, bool) {
+	for _, player := range c.players {
+		if player.name == name {
+			return player, true
+		}
+	}
+	return Player{}, false
+}
+
+func (c *Club) upgradePlayer(name string, trainingType string) (Player, bool) {
+	for i, player := range c.players {
+		if player.name == name {
+			player.upgrade(trainingType)
+			c.players[i] = player
+			return player, true
+		}
+	}
+	return Player{}, false
+}
+
 func (c *Club) addPlayer(player Player) {
 	c.players = append(c.players, player)
 }

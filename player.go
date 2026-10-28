@@ -41,3 +41,14 @@ func createPlayer(name string, position Position) Player {
 
 	return player
 }
+
+func (p *Player) upgrade(trainingType string) {
+	switch trainingType {
+	case "attack":
+		p.ratings.attack = min(p.ratings.attack+5, 100)
+	case "defence":
+		p.ratings.defence = min(p.ratings.defence+5, 100)
+	case "gk":
+		p.ratings.gk = min(p.ratings.gk+5, 100)
+	}
+}
